@@ -1,0 +1,26 @@
+
+  <mat-form-field class="example-full-width" [style.width.px]=327>
+    <mat-label>Stroy Name</mat-label>
+    <input matInput  type="text" [(ngModel)]="storyName">
+  </mat-form-field><br>
+
+  <mat-form-field class="example-full-width" [style.width.px]=327>
+    <mat-label>Uploaded By</mat-label>
+    <input matInput  [(ngModel)]="uploadedBy">
+  </mat-form-field><br>
+
+  <mat-form-field class="example-full-width" [style.width.px]=327>
+    <mat-label>Uploaded Date</mat-label>
+    <input matInput  [(ngModel)]="uploadedDate">
+  </mat-form-field><br>
+
+  <mat-form-field class="example-full-width" [style.width.px]=327>
+    <mat-label>Story</mat-label>
+    <textarea matInput  rows="5" cols="40" [(ngModel)]="story"></textarea>
+  </mat-form-field><br>
+
+
+  <button mat-raised-button color="primary" (click)="saveStory()">Upload</button>
+
+
+  
