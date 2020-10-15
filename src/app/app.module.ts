@@ -12,10 +12,22 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { StoryserviceService } from './services/storyservice.service';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ShowstoryComponent } from './showstory/showstory.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  {path: '' , component: NameEditorComponent},
+  {path: 'showstory' , component: ShowstoryComponent},
+  
+  
+
+];
 @NgModule({
   declarations: [
     AppComponent,
-    NameEditorComponent
+    NameEditorComponent,
+    ShowstoryComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +37,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule ,
     MatButtonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [StoryserviceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule { }

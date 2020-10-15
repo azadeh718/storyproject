@@ -8,6 +8,15 @@ mongoose.connect('mongodb://localhost:27017/StorySharing', {useNewUrlParser: tru
     console.log("Database Connected");
 });
 
+
+app.use((req, res, next) => {
+    console.log('This line is always called');
+    res.setHeader('Access-Control-Allow-Origin', '*'); //can connect from any host
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS'); //allowable methods
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept');
+    next();
+ });
+ 
 app.use(cors())
 ;app.use(express.json());
 app.use(express.urlencoded({extended:true}));
